@@ -4,6 +4,9 @@ var productList = document.getElementById('products');
 //Form submit event
 form.addEventListener('submit', addProduct);
 
+//DELETE EVENT
+productList.addEventListener('click', removeProducts);
+
 //Add Product
 function addProduct(e) {
     e.preventDefault();
@@ -23,5 +26,23 @@ function addProduct(e) {
     li.appendChild(document.createTextNode(newProduct));
     productList.appendChild(li);
 
+    //CREATE THE DELETE BUTTON
+    var deleteBtn = document.createElement('button');
+
+    //ADD CLASSES TO DELETE BUTTON
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+
+    //APPEND TEXT NODE
+    deleteBtn.appendChild(document.createTextNode('X'));
+
+    //APPEND BUTTON TO LIST
+    li.appendChild(deleteBtn);
+
+    //APPEND li TO LIST
+    productList.appendChild(li);
 
 }
+
+
+
+//C
