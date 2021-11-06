@@ -45,4 +45,14 @@ function addProduct(e) {
 
 
 
-//C
+//CREATE DELETE PRODUCTS FUNCTION
+function removeProducts(e) {
+    if (e.target.classList.contains('delete')) {
+
+        if (confirm('Are You Sure?')) {
+            var li = e.target.parentElement;
+            productList.removeChild(li);
+        }
+    }
+
+}
